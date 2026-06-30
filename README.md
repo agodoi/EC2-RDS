@@ -325,73 +325,10 @@ Procedimentos:
 
 4.2) Em qual Availability Zone está a instância primária?
 
-3. Existe uma instância standby? Como você identificou isso?
+4.3) Existe uma instância standby? Como você identificou isso?
 
-4. O que acontece se a AZ principal falhar?
 
-5. A aplicação precisa alterar o endpoint durante um failover?
+## 5. Integração aplicação × banco
 
-6. O aluno consegue acessar diretamente a instância secundária? Por quê?
-
----
-
-# 5. Integração aplicação × banco
-
-Agora eles relacionam infraestrutura com software.
-
-1. Onde a aplicação armazena os contatos?
-
-2. O que acontece se você adicionar um contato e atualizar a página?
-
-3. O que aconteceria se o banco fosse encerrado?
-
-4. O que aconteceria se a porta 3306 fosse bloqueada?
-
-5. Qual informação da aplicação precisou ser alterada para conectar ao banco?
-
-6. Quais informações de conexão são obrigatórias para qualquer aplicação acessar um banco MySQL?
-
----
-
-# Perguntas investigativas (nível Ciência da Computação)
-
-Essas costumam gerar uma discussão muito rica.
-
-1. Por que uma aplicação não deveria utilizar o usuário administrador do banco em produção?
-
-2. Qual seria uma estratégia mais segura para armazenar a senha do banco na aplicação?
-
-3. Se essa aplicação recebesse 10 milhões de usuários, qual seria o primeiro gargalo: EC2, RDS ou rede? Justifique.
-
-4. Quais serviços da AWS poderiam ser adicionados para tornar essa arquitetura mais escalável?
-
-5. Em quais situações faria sentido utilizar um banco NoSQL em vez do RDS?
-
-6. Por que o endpoint do banco permanece o mesmo mesmo após um failover?
-
-7. Qual seria o impacto de colocar o banco em uma subnet pública?
-
-8. Se fosse necessário permitir acesso ao banco apenas a um bastion host, quais alterações seriam necessárias nos Security Groups?
-
----
-
-# Desafio (nível avançado)
-
-Ao final do laboratório, proponha um desafio sem fornecer o caminho.
-
-> Investigue o ambiente criado e produza um diagrama da arquitetura contendo:
->
-> * VPC
-> * CIDRs
-> * Availability Zones
-> * Subnets
-> * EC2
-> * RDS Primário
-> * RDS Standby
-> * Security Groups
-> * Fluxo da comunicação
-> * Porta utilizada
-> * Caminho percorrido por uma requisição desde o navegador até a gravação no banco.
-
-Esse tipo de atividade faz o aluno navegar por praticamente todos os painéis envolvidos (VPC, RDS, EC2, Security Groups e Subnets) e consolida a compreensão da arquitetura além da simples execução do roteiro.
+5.1) Onde a aplicação armazena os contatos?
 
