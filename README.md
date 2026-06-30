@@ -276,7 +276,7 @@ Os dados estão sendo mantidos no banco de dados e são replicados automaticamen
 # Laboratório concluído
 Parabéns! Você concluiu o laboratório.
 
-# Questionário [valendo a ponderada]
+# Questionário [valendo parte da ponderada]
 ## Faça uma investigação das pré-configurações desse laboratório para entender melhor o que aconteceu:
 
 ### * Grupo de Segurança chamado Web Security Group;
@@ -286,7 +286,112 @@ Parabéns! Você concluiu o laboratório.
 ### * Subredes
 
 Procedimentos:
-* Pesquise cada palavra-chave acima na lupa do console e tome nota em um caderno dos campos configurados e pule os campos padrões.
-* Não precisa mostrar para o professor, mas servirá para você completar o seu aprendizado.
-* Alguns acessos dentre as palavras-chave acima estarão com bloqueio de acesso devido ao grupo de segurança pré-criado. Isso serve para a gente não modificar a aplicação do servidor :(
+* Pesquise cada palavra-chave acima na lupa do console e responda no forms as perguntas abaixo.
+* Não precisa mostrar as respostas para o professor, mas precisa responder dentro do horário da instrução.
+* Alguns acessos dentre as palavras-chave acima estarão com bloqueio de acesso devido ao grupo de segurança pré-criado. Isso serve para a gente não modifique a aplicação do servidor :(
 * O WebServer foi desenvolvido em Bootstrap pela AWS. [Bootstrap](https://getbootstrap.com/)
+
+## 1. VPC e Rede
+
+1.1) Em quais sub-redes o banco de dados foi implantado? Justifique sua resposta utilizando o painel do RDS.
+
+1.2) Essas sub-redes são públicas ou privadas? Como você chegou a essa conclusão?
+
+1.3) Por que o banco foi colocado em duas Availability Zones?
+
+1.4) O banco possui endereço IP público? Onde isso pode ser verificado?
+
+## 2. Security Groups
+
+
+2.1) Qual Security Group está associado ao banco?
+
+2.2) Qual porta está liberada para acesso ao banco?
+
+2.3) O acesso está liberado para qualquer IP da internet? Como você verificou isso?
+
+2.4) Se o servidor Web fosse colocado em outro Security Group, a aplicação continuaria funcionando? Justifique.
+
+
+## 3. Amazon RDS
+
+3.1) Qual o endpoint da instância? Explique por que ele é usado em vez de um endereço IP.
+
+
+## 4. Alta disponibilidade
+
+
+4.1) O que significa uma implantação Multi-AZ?
+
+4.2) Em qual Availability Zone está a instância primária?
+
+3. Existe uma instância standby? Como você identificou isso?
+
+4. O que acontece se a AZ principal falhar?
+
+5. A aplicação precisa alterar o endpoint durante um failover?
+
+6. O aluno consegue acessar diretamente a instância secundária? Por quê?
+
+---
+
+# 5. Integração aplicação × banco
+
+Agora eles relacionam infraestrutura com software.
+
+1. Onde a aplicação armazena os contatos?
+
+2. O que acontece se você adicionar um contato e atualizar a página?
+
+3. O que aconteceria se o banco fosse encerrado?
+
+4. O que aconteceria se a porta 3306 fosse bloqueada?
+
+5. Qual informação da aplicação precisou ser alterada para conectar ao banco?
+
+6. Quais informações de conexão são obrigatórias para qualquer aplicação acessar um banco MySQL?
+
+---
+
+# Perguntas investigativas (nível Ciência da Computação)
+
+Essas costumam gerar uma discussão muito rica.
+
+1. Por que uma aplicação não deveria utilizar o usuário administrador do banco em produção?
+
+2. Qual seria uma estratégia mais segura para armazenar a senha do banco na aplicação?
+
+3. Se essa aplicação recebesse 10 milhões de usuários, qual seria o primeiro gargalo: EC2, RDS ou rede? Justifique.
+
+4. Quais serviços da AWS poderiam ser adicionados para tornar essa arquitetura mais escalável?
+
+5. Em quais situações faria sentido utilizar um banco NoSQL em vez do RDS?
+
+6. Por que o endpoint do banco permanece o mesmo mesmo após um failover?
+
+7. Qual seria o impacto de colocar o banco em uma subnet pública?
+
+8. Se fosse necessário permitir acesso ao banco apenas a um bastion host, quais alterações seriam necessárias nos Security Groups?
+
+---
+
+# Desafio (nível avançado)
+
+Ao final do laboratório, proponha um desafio sem fornecer o caminho.
+
+> Investigue o ambiente criado e produza um diagrama da arquitetura contendo:
+>
+> * VPC
+> * CIDRs
+> * Availability Zones
+> * Subnets
+> * EC2
+> * RDS Primário
+> * RDS Standby
+> * Security Groups
+> * Fluxo da comunicação
+> * Porta utilizada
+> * Caminho percorrido por uma requisição desde o navegador até a gravação no banco.
+
+Esse tipo de atividade faz o aluno navegar por praticamente todos os painéis envolvidos (VPC, RDS, EC2, Security Groups e Subnets) e consolida a compreensão da arquitetura além da simples execução do roteiro.
+
