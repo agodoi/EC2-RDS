@@ -276,8 +276,8 @@ Os dados estão sendo mantidos no banco de dados e são replicados automaticamen
 # Laboratório concluído
 Parabéns! Você concluiu o laboratório.
 
-# Desafio [caso ainda tenha tempo de cronômetro]:
-## Faça uma investigação das pré-configurações desse laboratório para entender a fundo o que aconteceu:
+# Questionário [valendo a ponderada]
+## Faça uma investigação das pré-configurações desse laboratório para entender melhor o que aconteceu:
 
 ### * Grupo de Segurança chamado Web Security Group;
 ### * EC2;
