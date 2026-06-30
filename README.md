@@ -282,13 +282,12 @@ Parabéns! Você concluiu o laboratório.
 ### * Grupo de Segurança chamado Web Security Group;
 ### * EC2;
 ### * VPC;
-### * IAM;
-### * Subredes
+### * RDS.
 
 Procedimentos:
 * Pesquise cada palavra-chave acima na lupa do console e responda no forms as perguntas abaixo.
-* Não precisa mostrar as respostas para o professor, mas precisa responder dentro do horário da instrução.
-* Alguns acessos dentre as palavras-chave acima estarão com bloqueio de acesso devido ao grupo de segurança pré-criado. Isso serve para a gente não modifique a aplicação do servidor :(
+* Não precisa demonstrar as respostas para o professor durante a aula, mas precisa responder o Forms dentro do horário da instrução.
+* Caso alguns acessos dentre as palavras-chave acima estejam com bloqueio de acesso devido ao grupo de segurança pré-criado, justifique no forms. Isso serve para a gente não modifique a aplicação do servidor. É normal.
 * O WebServer foi desenvolvido em Bootstrap pela AWS. [Bootstrap](https://getbootstrap.com/)
 
 ## 1. VPC e Rede
